@@ -1,5 +1,11 @@
 *~
+*.tmp
 /.*
+ABORT
+PROCESSING
+TERMINATED
 data
 zip
 articles
+filelist
+logs
