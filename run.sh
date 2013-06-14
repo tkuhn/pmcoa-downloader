@@ -84,7 +84,6 @@ for file in `cat file_list.tmp`; do
   fi
   if [ -e zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file ] && [ ! -e data/$file ] ; then
     echo "Unpacking $file"
-    mkdir -p "data/$file"
     tar xfz "zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file" -C "data/$file/.."
     let NUNPACK=NUNPACK+1
   fi
