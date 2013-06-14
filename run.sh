@@ -82,9 +82,12 @@ for file in `cat file_list.tmp`; do
     wget --directory-prefix=zip -q -m "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/$file"
     let NDOWN=NDOWN+1
   fi
-  if [ -e zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file ] && [ ! -e data/$file ] ; then
+  d="${file%.tar.gz}"
+  p=$(dirname ${file})
+  if [ -e zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file ] && [ ! -e data/$d ] ; then
     echo "Unpacking $file"
-    tar xfz "zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file" -C "data/$file/.."
+    mkdir -p data/$p
+    tar xfz "zip/ftp.ncbi.nlm.nih.gov/pub/pmc/$file" -C "data/$p"
     let NUNPACK=NUNPACK+1
   fi
 done
