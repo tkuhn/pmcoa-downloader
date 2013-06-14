@@ -10,3 +10,9 @@ Run download script:
 Run download script in background:
 
     $ ./run.sh &
+
+
+License
+-------
+
+This is free software under the MIT License. See LICENSE.txt.
