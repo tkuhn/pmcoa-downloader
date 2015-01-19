@@ -15,4 +15,4 @@ Run download script in background:
 License
 -------
 
-This is free software under the MIT License. See LICENSE.txt.
+This is free software in the public domain. See LICENSE.txt.
